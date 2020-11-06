@@ -1,3 +1,20 @@
-<p id="notice"><%= notice %></p>
+<%= form_with scope: :author, local: true do |form| %>
+    <p>
+      <%= form.label :first_name %><br>
+      <%= form.text_field :first_name %>
+    </p>
+   
+    <p>
+      <%= form.label :last_name %><br>
+      <%= form.text_area :last_name %>
+    </p>
 
-<h1>Authors</h1>
+    <p>
+    <%= form.label :homepage %><br>
+    <%= form.text_area :homepage %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
