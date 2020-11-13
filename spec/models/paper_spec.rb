@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Paper, type: :model do
   
-  
   it "should not be valid without title" do
     paper = Paper.new({"venue" => "Home", "year" => 1970})
     expect(paper).to_not be_valid
