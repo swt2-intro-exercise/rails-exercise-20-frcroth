@@ -26,6 +26,6 @@ describe "Author overview page", type: :feature do
     it "should link to destroy" do
         @alan = FactoryBot.create :author
         visit authors_path
-        expect(page).to have_link 'Destroy', href: destroy_author_path(@alan)
+        expect(page).to have_link 'Destroy'
     end
 end
