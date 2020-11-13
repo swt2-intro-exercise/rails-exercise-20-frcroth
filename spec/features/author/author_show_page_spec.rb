@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "New author page", type: :feature do
+describe "Show Author page", type: :feature do
 
     it "should have text" do
         @alan = FactoryBot.create :author
