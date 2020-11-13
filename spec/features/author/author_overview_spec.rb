@@ -12,12 +12,14 @@ describe "Author overview page", type: :feature do
     end
 
     it "should link to edit" do
+        @alan = FactoryBot.create :author
         visit authors_path
-        expect(page).to have_link 'Edit', href: edit_author_path(1)
+        expect(page).to have_link 'Edit', href: edit_author_path(@alan)
     end
 
-    # it "should link to individual page" do
-    #    visit "/authors"
-    #    expect(page).to have_link, 'Show', href: /\/author\/[0-9]*/ 
-    # end
+    it "should link to individual page" do
+        @alan = FactoryBot.create :author
+        visit authors_path
+        expect(page).to have_link 'Show', href: author_path(@alan)
+    end
 end
