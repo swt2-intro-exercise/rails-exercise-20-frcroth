@@ -1,12 +1,4 @@
 class AuthorsController < ApplicationController
-    def new
-       @author = Author.new
-    end
-
-    def edit
-        @author = Author.find(params[:id])
-    end
-
     def index
         @authors = Author.all
     end
@@ -15,12 +7,20 @@ class AuthorsController < ApplicationController
         @author = Author.find(params[:id])
     end
 
+    def new
+       @author = Author.new
+    end
+
+    def edit
+        @author = Author.find(params[:id])
+    end
+
     def create
         @author = Author.new(author_params)
         if @author.save
             redirect_to authors_path, notice: 'Success!'
         else
-            render "new"
+            render 'new'
         end
     end
 
@@ -32,7 +32,14 @@ class AuthorsController < ApplicationController
         else
           render 'edit'
         end
-      end
+    end
+
+    def destroy
+        @author = Author.find(params[:id])
+        @author.destroy
+       
+        redirect_to authors_path
+    end
 
     private
     def author_params
