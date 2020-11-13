@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :authors
 
   get 'new_author_path' => 'authors#new'
+  post 'authors/create' => 'authors#create'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
