@@ -3,8 +3,16 @@ class AuthorsController < ApplicationController
        @author = Author.new
     end
 
+    def edit
+        @author = Author.find(params[:id])
+    end
+
     def index
         @authors = Author.all
+    end
+
+    def show
+        @author = Author.find(params[:id])
     end
 
     def create
@@ -16,9 +24,15 @@ class AuthorsController < ApplicationController
         end
     end
 
-    def show
+    def update
         @author = Author.find(params[:id])
-    end
+       
+        if @author.update(author_params)
+          redirect_to @author
+        else
+          render 'edit'
+        end
+      end
 
     private
     def author_params
