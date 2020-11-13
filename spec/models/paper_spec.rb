@@ -10,4 +10,9 @@ RSpec.describe Paper, type: :model do
     expect(paper.errors.full_messages.each).to include("Title can't be blank")
   end
 
+  it "should be created with no authors" do
+    paper = Paper.new({"title" => "On the importance of doing things", "venue" => "HPI", "year" => 2020})
+    expect(paper.authors).to be_empty
+  end
+
 end
