@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe "Author model", type: :model do
+describe Author, type: :model do
  
  it "should create author" do
-    author = Author.new("Alan", "Turing", "http://wikipedia.org/Alan_Turing")
+    author = Author.new({"first_name" => "Alan", "last_name" => "Turing", "homepage" => "http://wikipedia.org/Alan_Turing"})
     expect(author.first_name).to eq("Alan")
  end
 end
