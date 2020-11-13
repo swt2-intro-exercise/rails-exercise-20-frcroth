@@ -7,6 +7,7 @@ describe "Paper overview page", type: :feature do
         @paper2 = Paper.create({"title" => "On the importance of doing other things", "venue" => "HPI", "year" => 2021})
         visit "/papers?year=2021"
         expect(page).to_not have_text("Zerbestu's Law")
+        expect(page).to have_text("On the importance of doing other things")
    end
 
 end
