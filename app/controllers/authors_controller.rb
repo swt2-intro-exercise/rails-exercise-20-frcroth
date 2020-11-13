@@ -1,10 +1,6 @@
 class AuthorsController < ApplicationController
     def new
-       # @author = Author.new(author_params)
-
-        #@author.save
-        #redirect_to @article
-        #redirect_to root_path, notice: 'Success!'
+       @author = Author.new
     end
 
     def index
@@ -16,7 +12,7 @@ class AuthorsController < ApplicationController
         if @author.save
             redirect_to authors_path, notice: 'Success!'
         else
-            redirect_to authors_path, notice: 'Failure!'
+            render "new"
         end
     end
 
