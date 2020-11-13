@@ -22,4 +22,10 @@ describe "Author overview page", type: :feature do
         visit authors_path
         expect(page).to have_link 'Show', href: author_path(@alan)
     end
+
+    it "should link to destroy" do
+        @alan = FactoryBot.create :author
+        visit authors_path
+        expect(page).to have_link 'Destroy', href: destroy_author_path(@alan)
+    end
 end
