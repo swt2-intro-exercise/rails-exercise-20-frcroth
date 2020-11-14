@@ -9,5 +9,4 @@ describe "Paper overview page", type: :feature do
         expect(page).to_not have_text("Zerbestu's Law")
         expect(page).to have_text("On the importance of doing other things")
    end
-
 end
